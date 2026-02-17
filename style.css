@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300..700&display=swap');
+
+* {
+    font-family: "Fira Code", monospace;
+    font-optical-sizing: auto;
+}
+
+:root {
+    --txt: rgb(251, 255, 236);
+    --accent: rgb(213, 189, 252);
+    --bg: rgb(42, 39, 45);
+    --sbg: rgb(39, 36, 42);
+    --highlight: rgb(25, 25, 25);
+    --footer-font-size: 0px
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--txt);
+    margin: 20px 50px;
+    background-image: url('assets/dot.png');
+    background-size: 10px;
+    background-position: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+.fireedot {
+    filter: invert(95%) sepia(18%) saturate(309%) hue-rotate(39deg) brightness(106%) contrast(105%);
+    width: 10px
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+nav a {
+    color: var(--bg);
+    background-color: var(--txt);
+    padding: 10px 10px;
+    font-weight: 900;
+}
+.other {
+    padding-top: 10px;
+}
+.other a {
+    color: var(--accent);
+}
+a {
+    text-decoration: none;
+}
+button a {
+    color: var(--bg);
+}
+
+button {
+    color: var(--bg);
+    background-color: var(--txt);
+    padding: 5px 10px;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+}
+
+.caret {
+
+    display: inline-block;
+    background-color: var(--txt);
+    width: 15px;
+    height: 28px;
+    transform: translateY(3px);
+
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    display: flex;
+    user-select: none;
+    background-color: var(--bg);
+    padding: 10px;
+    font-size: 20px;
+}
+
+footer i {
+    margin-right: -9px;
+}
+footer a {
+    display: inline-block;
+    text-decoration: none;
+}
+footer span:hover {
+    --footer-font-size: 18px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+footer font {
+    font-size: var(--footer-font-size);
+    transition: 0.25s;
+}
+
+div.space {
+    height: 50px;
+}
+
+/*thanks flickity*/
+.middle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main-gallery {
+    width: 90%;
+    background-color: var(--sbg);
+}
+
+.gallery-cell {
+    width: 100%;
+    height: 300px;
+    margin-right: 10px;
+    counter-increment: gallery-cell;
+    display: flex;
+}
+
+/* cell number */
+.gallery-cell:before {
+    display: block;
+    text-align: center;
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}
+
+.main-body {
+    height: 100%;
+}
+
+.thumb {
+    width: 40%;
+    min-width: 40%;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content {
+    padding: 0px 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.flickity-button.next {
+    transform: translateY(-50%) translateX(60px);
+}
+.flickity-button.previous {
+    transform: translateY(-50%) translateX(-60px);
+}
+
+@media screen and (max-width:950px) {
+    .gallery-cell {
+        flex-direction: column !important;
+    }
+    .gallery-cell .thumb {
+        width: 100% !important;
+        height: 100px;
+        object-position: center;
+    }
+    .gallery-cell img {
+        width: 100% !important;
+        object-position: center;
+    }
+    footer {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        justify-content: center;
+        /*align-items: center;*/
+        /*height: 40px;*/
+        font-size: 24px;
+    }
+}
